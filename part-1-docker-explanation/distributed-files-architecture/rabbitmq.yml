@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+
+  RABBITMQ:
+    image: "hello-world"
+    networks:
+      - rmq
+
+networks:
+
+  rmq:
+    internal: true

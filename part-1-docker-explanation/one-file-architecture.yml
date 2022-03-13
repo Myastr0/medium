@@ -1,0 +1,41 @@
+version: "3.7"
+
+services:
+  API:
+    image: "hello-world"
+    command: /bin/sh
+    networks:
+      - api
+      - rmq
+
+  CRM:
+    image: "hello-world"
+    command: /bin/sh
+    networks:
+      - api
+
+  APP:
+    image: "hello-world"
+    command: /bin/sh
+    networks:
+      - api
+
+  RABBITMQ:
+    image: "hello-world"
+    command: /bin/sh
+    networks:
+      - rmq
+
+  MAIL-service:
+    image: "hello-world"
+    command: /bin/bash
+    networks:
+      - rmq
+
+networks:
+
+  api:
+    internal: true
+
+  rmq:
+    internal: true

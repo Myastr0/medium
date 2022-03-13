@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  CRM:
+    image: "hello-world"
+    networks:
+      - api
+
+networks:
+
+  api:
+    internal: true

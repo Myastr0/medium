@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  API:
+    image: "hello-world"
+    command: /bin/bash
+    networks:
+      - api
+      - rmq
+
+networks:
+
+  api:
+    internal: true
+
+  rmq:
+    internal: true
